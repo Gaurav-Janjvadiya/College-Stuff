@@ -1,49 +1,53 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>MarkSheet</title>
-    <link rel="shortcut icon" href="./iconn.png" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>3D Toy</title>
+<style>
+    body {
+        margin: 0;
+        overflow: hidden;
+    }
+    canvas {
+        display: block;
+    }
+</style>
 </head>
-<body 
-style="height: 100vh; background-color: lightgray; width: 100%; display: flex; justify-content: center ; align-items: center;  letter-spacing: 2px;"
->
-    <form 
-    style="flex-direction: column; display: flex; padding:1rem; border: 1px solid gray; border-radius:1rem; justify-content: center ; align-items: center;" 
-        
-        <input 
-        style="all:initial; font-family: monospace; font-size: 20px; padding: 1rem 2rem; background-color: lightcyan; margin: 1rem; border-radius: 2rem; color: black; " type="text" 
-        placeholder="enter your name" 
-        name="name"
-        >
+<body>
+<canvas id="canvas"></canvas>
+<script>
+    const canvas = document.getElementById('canvas');
+    const ctx = canvas.getContext('2d');
 
-        <input 
-        style="all:initial; font-family: monospace; font-size: 20px; padding: 1rem 2rem; background-color: lightcyan; margin: 1rem; border-radius: 2rem; color: black; " 
-        type="text" 
-        placeholder="subject one marks" 
-        name="sub1"
-        >
+    let toyX = canvas.width / 2;
+    let toyY = canvas.height / 2;
 
-        <input 
-        style="all:initial; font-family: monospace; font-size: 20px; padding: 1rem 2rem; background-color: lightcyan; margin: 1rem; border-radius: 2rem; color: black; " 
-        type="text" 
-        placeholder="subject two marks"  
-        name="sub2"
-        >
+    function drawToy(x, y) {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-        <input 
-        style="all:initial; font-family: monospace; font-size: 20px; padding: 1rem 2rem; background-color: lightcyan; margin: 1rem; border-radius: 2rem; color: black; " 
-        type="text" 
-        placeholder="subject three marks"  
-        name="sub3"
-        >
+        // Draw 3D toy (example: cube)
+        ctx.fillStyle = 'blue';
+        ctx.fillRect(x - 50, y - 50, 100, 100);
 
-        <input 
-        style="all:initial; font-family: monospace; font-size: 20px; padding:0.3rem 1rem; background-color: orangered; border-radius: 3rem; color: white;" 
-        type="submit" 
-        name="submit"
-        >
-    </form>
+        // Draw additional features or modify as needed for your toy
+
+    }
+
+    function handleMouseMove(event) {
+        toyX = event.clientX - canvas.getBoundingClientRect().left;
+        toyY = event.clientY - canvas.getBoundingClientRect().top;
+        drawToy(toyX, toyY);
+    }
+
+    function init() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        drawToy(toyX, toyY);
+        canvas.addEventListener('mousemove', handleMouseMove);
+    }
+
+    init();
+</script>
 </body>
 </html>

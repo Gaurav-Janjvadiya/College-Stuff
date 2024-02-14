@@ -1,3 +1,14 @@
-html{
-    background-color: #cb5ef0;
+body{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+canvas{
+    height: 80%;
+    width: 80%;
+    border-radius: 2rem;
+    border: 1px solid gray ;
 }
