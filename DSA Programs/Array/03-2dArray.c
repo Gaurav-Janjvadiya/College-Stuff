@@ -1,24 +1,28 @@
-//how to get input from user in 2D array and print them;
 #include <stdio.h>
 
 void main()
 {
-    int array[3][5];
+    int r;
+    int c;
 
-    for(int i=0;i<3;i++)
+    printf("Enter number of row and coulumn : ");
+    scanf("%d %d",&r,&c);
+
+    int array[r][c];
+
+    for(int i=0;i<r;i++)
     {
-        for(int j=0;j<5;j++)
+        for(int j=0;j<c;j++)
         {
-            printf("\nEnter value of array[%d][%d] : ",i,j);
+            printf("\nEnter value at array[%d][%d] : ",i,j);
             scanf("%d",&array[i][j]);
         }
     }
-    for(int i=0;i<3;i++)
+
+    for(int i=0;i<r;i++)
     {
-        for(int j=0;j<5;j++)
+        for(int j=0;j<c;j++)
         {
-            printf("array[%d][%d] : %d \t",i,j,array[i][j]);
+            printf("\nValue at array[%d][%d] is : %d ",i,j,array[i][j]);
         }
-        printf("\n");
     }
-}
