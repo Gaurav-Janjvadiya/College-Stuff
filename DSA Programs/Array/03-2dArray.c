@@ -25,4 +25,6 @@ void main()
         {
             printf("\nValue at array[%d][%d] is : %d ",i,j,array[i][j]);
         }
+        printf("\n");
     }
+}
