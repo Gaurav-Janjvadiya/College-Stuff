@@ -2,10 +2,10 @@
 
 void main()
 {
-    int arr[5] = {5, 3, 2, 6, 1};
+    int arr[5] = {15, 23, 62, 26, 17};
 
     int temp;
-    for (int i = 0; i < 5; i++)
+    for (int i = 0; i < 4; i++)
     {
         for (int j = 0; j < 5; j++)
         {
