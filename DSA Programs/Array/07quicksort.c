@@ -72,10 +72,16 @@ int partition(int a[], int lb, int ub)
             a[start] = a[end];
             a[end] = temp;
         }
+        for (int i = 0; i < n; i++)
+        {
+            printf("%d ", a[i]);
+        }
+        printf("\n");
     }
     temp = a[lb];
     a[lb] = a[end];
     a[end] = temp;
+
     return end;
 }
 
